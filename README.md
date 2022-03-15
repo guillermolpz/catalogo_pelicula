@@ -35,7 +35,7 @@ Versiones anteriores de python
 python catalogo-peliculas\catalogo_peliculas.py 
 ```
 _Al ejcutar el programa, se abrira la aplicacion como se muestra a continuacion._
-![alt text](img.png)
+![Screenshot](img.png)
 
 ## Generar ejecutable 📦
 _A continuación, mostraremos como generar el ejecutable de la aplicación._
