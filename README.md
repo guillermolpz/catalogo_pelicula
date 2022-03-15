@@ -2,28 +2,52 @@
 _En este proyecto se creo un ejemplo sencillo de una aplicacion de escritorio en python utilizando sqlite3 para la gestion de un catalogo de peliculas._
 
 ## Comenzando
-_Puede descagar el proyecto como apoyo para quienes comienzan en python._
+_Este proyecto es un ejemplo de como trabajar aplicaciones de escritorio en Python._
 
 ### Pre-requisitos 📋
-
-### Instalación 🔧
-
-## Generar ejecutable 📦
-_Acontinuación las instrucciones para generar un ejecutable._
-_Ya que el ejemplo no es tan sencillo no se pude generar un ejecutable de forma rapida es necesario realizar lo siguiente._
-_Instalar._
+_Para poder ejecutar la aplicación será necesario realizar los siguientes paso desde el cmd o terminal en linux_
+_Crear un entorno virtual en Python_
 ```
+Python 3.10 en windows
+py -m venv env
+Versiones anteriores a 3.10 de python o en linux
+python -m venv env
+```
+_Activar el entorno virtual que se creo._
+```
+Windows
+env\Scripts\activate.bat
+Linux
+source env/Scripts/activate
+```
+_Instalar las dependencias sobre el entorno virtual._
+```
+pip install numpy
 pip install pyinstaller
 ```
-_Crear el archivo .spec que permitira genera el archivo ejecutable._
+
+### Instalación 🔧
+_Para ejecutar la aplicacin corremos el siguiente comando con nuestro ambiente virtual activado._
 ```
-pyi-makespec catalogo_peliculas.py --windowed
+Version 3.10 de python
+py catalogo-peliculas\catalogo_peliculas.py
+Versiones anteriores de python
+python catalogo-peliculas\catalogo_peliculas.py 
 ```
-_Una vez que se genere el archivo .spec sera neserario editarlo en la datas_
+_Al ejcutar el programa, se abrira la aplicacion como se muestra a continuacion._
+![alt text](img.png)
+
+## Generar ejecutable 📦
+_A continuación, mostraremos como generar el ejecutable de la aplicación._
+_Ya que la aplicación no es un ejemplo tan sencillo y se compone de diferentes paquetes es necesario crear un archivo spec para poder crear el ejecutable, el archivo ya esta creado, pero dejo la línea que se ejecuta para crear este archivo._
 ```
-Originalmente se vera asi
+pyi-makespec catalogo-peliculas\catalogo_peliculas.py --windowed
+```
+_En este archivo se editaron las siguientes líneas para que se genere en el ejecutable la dirección a logo y a la base de datos._
+```
+Originalmente se verá así
 datas=[],
-Se de pasar a esta forma
+Se pasa a esta forma
 datas=[('./img/*.ico', 'img'),('./database/*.db', 'database')],
 ```
 _Por ultimo ahora ejecutamos el archivo creado para lograr que se genere el ejecutable._
@@ -31,5 +55,4 @@ _Por ultimo ahora ejecutamos el archivo creado para lograr que se genere el ejec
 pyinstaller catalogo_peliculas.spec
 ```
 
-
-## Construido con 🛠️
+_Una vez que se ejecute la sentencia anterior se crearan las siguientes carpetas build y dist, en dist encontrar una carpeta con el nombre catalogo_peliculas y dentro de esta carpeta está el ejecutable con el mismo nombre._
