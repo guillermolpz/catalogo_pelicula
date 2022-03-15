@@ -4,3 +4,10 @@ __pycache__/
 # Archivos ejecutables
 build/
 dist/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
